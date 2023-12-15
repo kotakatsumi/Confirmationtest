@@ -1,5 +1,3 @@
-# 演習
-# 演習
-# 演習
-# exercises
-# Confirmationtest
+# お問い合わせフォーム
+#　お問い合わせ内容管理画面
+
