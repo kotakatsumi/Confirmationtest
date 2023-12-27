@@ -8,6 +8,6 @@ use Maatwebsite\Excel\Facades\Excel;
 class DownloadController extends Controller
 {
     public function Download(){
-    return Excel::download(new ContactsExport, 'contacts.xlsx');
+       return Excel::download(new ContactsExport, 'contacts.xlsx');
     }
 }

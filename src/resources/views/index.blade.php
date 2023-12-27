@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 @endsection
 
 @section('content')
@@ -16,17 +16,17 @@
                     <th class="column-title">お名前<span class="attention">※</span></th>
                     <td id="name" class="table-cell">
                         <div class="name-separate">
-                        <input class="input-area" type="text" name="first-name" placeholder="例: 山田" value="{{old('firstName')}}">
-                        <input class="input-area" type="text" name="last-name" placeholder="例: 太郎" value="{{old('lastName')}}">
+                        <input class="input-area" type="text" name="family-name" placeholder="例）山田" value="{{old('familyName')}}">
+                        <input class="input-area" type="text" name="first-name" placeholder="例）太郎" value="{{old('firstName')}}">
                         </div>
                         <div class="error-message name_error">
                             <div class="family-name_error">
-                                @error('first-name')
+                                @error('family-name')
                                     {{$message}}
                                 @enderror
                             </div>
                             <div class="first-name_error">
-                                @error('last-name')
+                                @error('first-name')
                                     {{$message}}
                                 @enderror
                             </div>
@@ -70,14 +70,14 @@
                     <th class="column-title">電話番号<span class="attention">※</span></th>
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
-                        <input class="input-area tel-input" name="first-tel" value="{{old('firstTel')}}">
+                        <input class="input-area tel-input" name="first-three" value="{{old('firstTel')}}">
                         <span class="tell-interface">-</span>
-                        <input class="input-area tel-input" name="center-tel" value="{{old('secondTel')}}">
+                        <input class="input-area tel-input" name="second-three" value="{{old('secondTel')}}">
                         <span class="tell-interface">-</span>
-                        <input class="input-area tel-input" name="last-tel" value="{{old('thirdTel')}}">
+                        <input class="input-area tel-input" name="third-three" value="{{old('thirdTel')}}">
                         </div>
                     <div class="error-message">
-                        @if($errors->has('first-tel') || $errors->has('center-tel') || $errors->has('last-tel') )
+                        @if($errors->has('first-three') || $errors->has('second-three') || $errors->has('third-three') )
                             電話番号を入力してください
                         @endif
                     </div>
@@ -86,7 +86,7 @@
                 <tr class="table-line">
                     <th class="column-title">住所<span class="attention">※</span></th>
                     <td id="address" class="table-cell">
-                        <input class="input-area address-input" type="text" name="address" placeholder="例: 東京都渋谷区千駄ヶ谷1-2-3" value="{{old('address')}}">
+                        <input class="input-area address-input" type="text" name="address" placeholder="例）東京都渋谷区千駄ヶ谷1-2-3" value="{{old('address')}}">
                         <div class="error-message">
                             @error('address')
                                 {{$message}}
@@ -97,7 +97,7 @@
                 <tr class="table-line">
                     <th class="column-title">建物名<span class="attention">※</span></th>
                     <td id="building" class="table-cell">
-                        <input class="input-area building-input" type="text" name="building" placeholder="例: 千駄ヶ谷マンション101" value="{{old('building')}}">
+                        <input class="input-area building-input" type="text" name="building" placeholder="例）千駄ヶ谷マンション101" value="{{old('building')}}">
                     </td>
                 </tr>
                 <tr class="table-line">
@@ -106,11 +106,11 @@
                         <div id="category">
                         <select class="input-area category-select" name="category_id" value="{{old('category_id')}}">
                             <option selected disabled>選択してください</option>
-                            <option value="商品のお届けについて">商品のお届けについて</option>
-                            <option value="商品の交換について">商品の交換について</option>
-                            <option value="商品トラブル">商品トラブル</option>
-                            <option value="ショップへのお問い合わせ">ショップへのお問い合わせ</option>
-                            <option value="その他">その他</option>
+                            <option value="商品のお届けについて">1.商品のお届けについて</option>
+                            <option value="商品の交換について">2.商品の交換について</option>
+                            <option value="商品トラブル">3.商品トラブル</option>
+                            <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
+                            <option value="その他">5.その他</option>
                         </select>
                         </div>
                         <div class="error-message">

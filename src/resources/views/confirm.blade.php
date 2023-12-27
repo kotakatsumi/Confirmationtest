@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/confirm.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/confirm.css')}}">
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                 <tr class="table-line">
                     <th class="column-title">お名前</th>
                     <td class="table-cell">
-                        <input class="read-input" name="fullname" type="text" value="{{$fullName}}" readonly>
+                        <input class="read-input" name="fullname" type="text" value="{{$fullname}}" readonly>
                     </td>
                 </tr>
                 <tr class="table-line">
@@ -59,7 +59,6 @@
                     </td>
                 </tr>
             </table>
-            <div class="flex">
             <div class="buttons-area">
                 <button class="toThanks" type="submit">送信</button>
             </div>
@@ -68,7 +67,6 @@
             @csrf
             <div class="fix-area">
                 <button class="toFix" type="submit">修正</button>
-            </div>
             </div>
         </form>
     </div>

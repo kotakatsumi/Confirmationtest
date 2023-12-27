@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DownloadController;
 
@@ -20,17 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',[ContactController::class,'index']);
+Route::get('/',[IndexController::class,'index']);
 
-Route::post('/confirm',[ContactController::class,'confirm']);
+Route::post('/confirm',[IndexController::class,'confirm']);
 
-Route::get('/confirm/fix',[ContactController::class,'fix']);
+Route::get('/confirm/fix',[IndexController::class,'fix']);
 
-Route::post('/thanks',[ContactController::class,'store']);
+Route::post('/thanks',[IndexController::class,'store']);
 
-Route::middleware('auth')->group(function(){Route::get('/admin', [ContactController::class, 'admin']);});
+Route::middleware('auth')->group(function(){Route::get('/admin', [IndexController::class, 'admin']);});
 
-Route::get('/admin/search',[ContactController::class,'search']);
+Route::get('/admin/search',[IndexController::class,'search']);
 
 Route::get('/register',[AuthController::class,'registerShow']);
 
